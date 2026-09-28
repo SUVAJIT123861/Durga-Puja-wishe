@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>শুভ দুর্গাপূজা 🌺 - শুভেচ্ছা পাঠাও</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@300;500;700;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-gold: #FFD700;
+  --secondary-gold: #FFA500;
+  --deep-red: #800000;
+  --crimson: #B22222;
+  --dark-bg: #120005;
+  --card-bg: rgba(25, 5, 10, 0.75);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Hind Siliguri', 'Anek Bangla', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  background: radial-gradient(circle at 50% 15%, #4a0000 0%, #1a0005 60%, #080002 100%);
+  position: relative;
+  padding: 15px 10px;
+}
+
+/* Background Animated Lights */
+.bg-glow {
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,180,0,0.15) 0%, rgba(255,0,0,0) 70%);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(0.8); opacity: 0.5; }
+  100% { transform: translateX(-50%) scale(1.3); opacity: 0.9; }
+}
+
+/* Background Stars/Sparkles */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background-image: 
+    radial-gradient(#ffe082 1.5px, transparent 1.5px),
+    radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 50px 50px, 30px 30px;
+  background-position: 0 0, 15px 15px;
+  animation: floatStars 12s linear infinite;
+}
+
+@keyframes floatStars {
+  from { background-position: 0 0, 15px 15px; }
+  to { background-position: 0 100px, 15px 115px; }
+}
+
+.wrap {
+  width: min(100%, 480px);
+  position: relative;
+  z-index: 2;
+  margin: auto;
+}
+
+/* Glassmorphism Premium Card */
+.card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 30px 22px 25px;
+  border-radius: 32px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(212, 100, 0, 0.25),
+    inset 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+/* Decorative Ornamental Borders */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border: 1px dashed rgba(255, 215, 0, 0.3);
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+/* Image Container */
+.photo-frame {
+  position: relative;
+  width: min(100%, 320px);
+  margin: 0 auto 18px;
+}
+
+.photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  border: 2px solid var(--primary-gold);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 180, 0, 0.3);
+  background: linear-gradient(135deg, #3a0000, #100003);
+}
+
+#fallback {
+  display: none;
+  font-size: 80px;
+  padding: 40px 0;
+  filter: drop-shadow(0 0 20px #ff9d24);
+}
+
+/* Heading Typography */
+.title-tag {
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--secondary-gold);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-family: 'Anek Bangla', sans-serif;
+  font-size: clamp(38px, 9vw, 52px);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFE57F 40%, #FFB300 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 10px rgba(255, 160, 0, 0.4));
+}
+
+.subtitle {
+  color: #f3e5f5;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0 10px;
+}
+
+/* Form Styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.input-group {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+input::placeholder {
+  color: #b39ddb;
+  opacity: 0.7;
+}
+
+input:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* Buttons Styling */
+.btn-primary {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: inherit;
+  color: #300000;
+  background: linear-gradient(135deg, #FFF176 0%, #FFB300 50%, #FF6F00 100%);
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(255, 180, 0, 0.6);
+  background: linear-gradient(135deg, #FFF59D 0%, #FFC107 50%, #FF8F00 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* WhatsApp Share Button */
+.btn-whatsapp {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
+  background: linear-gradient(135deg, #34E075 0%, #15A090 100%);
+}
+
+/* Audio Control Button */
+.music-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 215, 0, 0.2);
+}
+
+/* Wish Box Styling */
+.wish-card {
+  margin-top: 18px;
+  padding: 22px 18px;
+  border-radius: 20px;
+  background: rgba(255, 215, 0, 0.06);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wish-card h2 {
+  color: var(--primary-gold);
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.wish-card p {
+  color: #fff8e1;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.sender-tag {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 16px;
+  background: rgba(255, 215, 0, 0.15);
+  border-radius: 20px;
+  color: var(--primary-gold);
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.note {
+  font-size: 12px;
+  color: #d1c4e9;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+/* Adsterra Centered Container */
+.ad-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.ad-container iframe,
+.ad-container div {
+  margin: 0 auto !important;
+  max-width: 100% !important;
+}
+
+/* Falling Flowers */
+#petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -30px;
+  font-size: 22px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(540deg);
+    opacity: 0.1;
+  }
+}
+
+/* Canvas Confetti */
+#confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 420px) {
+  .card {
+    padding: 22px 16px 24px;
+    border-radius: 26px;
+  }
+  .photo {
+    height: 220px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Glow -->
+<div class="bg-glow"></div>
+
+<!-- Background Audio Toggle -->
+<button class="music-btn" id="musicToggle" title="Audio Toggle" onclick="toggleAudio()">
+  🔔
+</button>
+
+<!-- Falling Petals Container -->
+<div id="petals"></div>
+
+<!-- Confetti Canvas -->
+<canvas id="confetti"></canvas>
+
+<div class="wrap">
+  <main class="card">
+    
+    <!-- Image Display Frame -->
+    <div class="photo-frame">
+      <img class="photo" src="durga.png" alt="Maa Durga" onerror="this.style.display='none'; document.getElementById('fallback').style.display='block';">
+      <div id="fallback">🌺🙏🌺</div>
+    </div>
+
+    <div class="title-tag">✨ শারদীয় শুভেচ্ছা ✨</div>
+    <h1>শুভ দুর্গাপূজা</h1>
+
+    <p class="subtitle">
+      মা দুর্গার আগমনী বার্তায় আপনার জীবন হয়ে উঠুক আনন্দময়। সুখ, শান্তি ও সমৃদ্ধিতে ভরে উঠুক প্রতিটি দিন। 🌺✨
+    </p>
+
+    <!-- Name Input Form -->
+    <div class="form" id="form">
+      <div class="input-group">
+        <input id="name" maxlength="30" placeholder="আপনার নাম লিখুন..." autocomplete="off">
+      </div>
+      <button class="btn-primary" onclick="createWish()">
+        <span>🌺 শুভেচ্ছা কার্ড তৈরি করুন</span>
+      </button>
+    </div>
+
+    <!-- Generated Wish Box -->
+    <section class="wish-card hidden" id="wish">
+      <h2>🌺 শারদীয় দুর্গাপূজার শুভেচ্ছা 🌺</h2>
+      <p id="message"></p>
+      
+      <div id="senderDisplay" class="sender-tag"></div>
+
+      <button class="btn-primary btn-whatsapp" onclick="shareWish()">
+        <span>📲 WhatsApp-এ প্রিয়জনদের পাঠান</span>
+      </button>
+      
+      <button class="btn-primary" style="margin-top: 10px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);" onclick="resetForm()">
+        <span>🔄 নতুন নামে শুভেচ্ছা তৈরি করুন</span>
+      </button>
+    </section>
+
+    <div class="note">
+      🌸 শুভ দুর্গাপূজা • আনন্দ ভাগ করে নিন সবার সাথে 🌸
+    </div>
+
+    <!-- Adsterra 320x50 Ad Unit -->
+    <div class="ad-container">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '625e3e69b89195e207f24663b579ca71',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="https://www.highrevenueformat.com/625e3e69b89195e207f24663b579ca71/invoke.js"></script>
+    </div>
+
+  </main>
+</div>
+
+<script>
+/* =================================
+   AUDIO EFFECT (OPTIONAL TONE)
+================================= */
+let audioCtx = null;
+let isPlaying = false;
+
+function toggleAudio() {
+  const btn = document.getElementById("musicToggle");
+  if (!isPlaying) {
+    btn.innerHTML = "🔔✨";
+    isPlaying = true;
+    startBellTone();
+  } else {
+    btn.innerHTML = "🔔";
+    isPlaying = false;
+  }
+}
+
+function startBellTone() {
+  if (!isPlaying) return;
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(587.33, audioCtx.currentTime);
+    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.5);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 1.5);
+  } catch(e) {}
+}
+
+/* =================================
+   URL PARAMETER AUTO-LOAD
+================================= */
+window.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const senderName = urlParams.get('from');
+  if (senderName) {
+    displayWish(decodeURIComponent(senderName));
+  }
+});
+
+/* =================================
+   CONFETTI ANIMATION
+================================= */
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+let pieces = [];
+let active = false;
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+function confetti() {
+  pieces = Array.from({ length: 140 }, () => ({
+    x: Math.random() * canvas.width,
+    y: -20 - Math.random() * 200,
+    s: 4 + Math.random() * 6,
+    v: 2 + Math.random() * 4,
+    r: Math.random() * 6.28,
+    vr: -0.1 + Math.random() * 0.2,
+    c: ["#FFD700", "#FF5722", "#FFF59D", "#E91E63", "#4CAF50"][Math.floor(Math.random() * 5)]
+  }));
+
+  if (!active) {
+    active = true;
+    requestAnimationFrame(drawConfetti);
+  }
+}
+
+function drawConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  pieces.forEach(p => {
+    p.y += p.v;
+    p.r += p.vr;
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.r);
+    ctx.fillStyle = p.c;
+    ctx.fillRect(-p.s / 2, -p.s / 2, p.s, p.s * 1.6);
+    ctx.restore();
+  });
+
+  pieces = pieces.filter(p => p.y < canvas.height + 30);
+  if (pieces.length) {
+    requestAnimationFrame(drawConfetti);
+  } else {
+    active = false;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+}
+
+/* =================================
+   FLOWER PETALS ANIMATION
+================================= */
+function startPetals() {
+  const box = document.getElementById("petals");
+  box.innerHTML = "";
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement("span");
+    p.className = "petal";
+    p.textContent = ["🌺", "🌸", "✨", "🌼"][Math.floor(Math.random() * 4)];
+    p.style.left = Math.random() * 100 + "%";
+    p.style.animationDuration = (4 + Math.random() * 5) + "s";
+    p.style.animationDelay = (Math.random() * 2) + "s";
+    box.appendChild(p);
+    setTimeout(() => p.remove(), 9000);
+  }
+}
+
+/* Security Helper */
+function escapeHtml(text) {
+  return text.replace(/[&<>"']/g, m => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+  }[m]));
+}
+
+/* =================================
+   CREATE & DISPLAY WISH
+================================= */
+function createWish() {
+  const input = document.getElementById("name");
+  const name = input.value.trim();
+
+  if (!name) {
+    alert("দয়া করে আপনার সুন্দর নামটি লিখুন 😊");
+    input.focus();
+    return;
+  }
+
+  displayWish(name);
+  
+  const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?from=' + encodeURIComponent(name);
+  window.history.pushState({path: newUrl}, '', newUrl);
+}
+
+function displayWish(name) {
+  const safeName = escapeHtml(name);
+  
+  document.getElementById("message").innerHTML = `
+    <b>${safeName}</b>-এর পক্ষ থেকে আপনাকে ও আপনার পরিবারকে জানাই দুর্গাপূজার প্রীতি ও শুভেচ্ছা! 🌺🙏
+    <br><br>
+    মা দুর্গার আশীর্বাদে আপনার জীবন অনাবিল আনন্দ, সুখ, শান্তি ও সুস্বাস্থ্য দিয়ে ভরে উঠুক। শুভ মহাষষ্ঠী থেকে বিজয়া দশমী—প্রতিটি দিন কাটুক মহা আনন্দে! ✨
+  `;
+
+  document.getElementById("senderDisplay").innerText = `শুভেচ্ছান্তে: ${safeName}`;
+
+  document.getElementById("form").classList.add("hidden");
+  document.getElementById("wish").classList.remove("hidden");
+
+  confetti();
+  startPetals();
+  startBellTone();
+}
+
+function resetForm() {
+  document.getElementById("form").classList.remove("hidden");
+  document.getElementById("wish").classList.add("hidden");
+  document.getElementById("name").value = "";
+  
+  const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+  window.history.pushState({path: cleanUrl}, '', cleanUrl);
+}
+
+/* =================================
+   WHATSAPP SHARE FUNCTION
+================================= */
+function shareWish() {
+  const name = document.getElementById("name").value.trim() || new URLSearchParams(window.location.search).get('from') || "";
+  
+  const currentUrl = window.location.href;
+  
+  const text = `🌺🙏 *শুভ দুর্গাপূজা!* 🙏🌺\n\n*${name}* আপনাকে এবং আপনার পরিবারকে দুর্গাপূজার আন্তরিক শুভেচ্ছা ও ভালোবাসা পাঠিয়েছে। ❤️\n\nনিচের লিংকে ক্লিক করে শুভেচ্ছা বার্তাটি দেখুন:\n👇👇👇\n${currentUrl}`;
+
+  const whatsappURL = "https://wa.me/?text=" + encodeURIComponent(text);
+  window.open(whatsappURL, "_blank");
+}
+</script>
+
+</body>
+</html>
